@@ -1,0 +1,21 @@
+app = "mp3-http-proxy"
+
+[build]
+  buildpacks = ["paketobuildpacks/nodejs"]
+
+[http_service]
+  internal_port = 8000
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+  # cổng 80 cho ESP32 (HTTP, KHÔNG force https)
+  [[http_service.ports]]
+    port = 80
+    handlers = ["http"]
+
+  # vẫn có thể vào 443 nếu bạn muốn
+  [[http_service.ports]]
+    port = 443
+    handlers = ["tls", "http"]

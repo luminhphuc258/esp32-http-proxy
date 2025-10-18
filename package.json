@@ -1,14 +1,12 @@
 {
-  "name": "esp32-http-proxy",
-  "version": "1.0.0",
-  "description": "HTTP proxy for ESP32 to fetch audio from Railway HTTPS server",
-  "main": "server.js",
+  "name": "mp3-http-proxy",
   "type": "module",
-  "scripts": {
-    "start": "node server.js"
-  },
+  "version": "1.0.0",
   "dependencies": {
     "express": "^4.19.2",
     "node-fetch": "^3.3.2"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }
